@@ -112,6 +112,54 @@ namespace SearchAlgorithm
         }
         static void Main(string[] args)
         {
+            Program MyList = new Program();
+            int Pilihanmenu;
+            char ch;
+            do
+            {
+                do
+                {
+                    Console.WriteLine("Menu Option");
+                    Console.WriteLine("===========");
+                    Console.WriteLine("1. linear Search");
+                    Console.WriteLine("2. Binary Search");
+                    Console.WriteLine("3. Exit");
+                    Console.WriteLine("Enter your choise (1,2,3) : ");
+                    Pilihanmenu = Convert.ToInt32(Console.ReadLine());
+                    switch (Pilihanmenu)
+                    {
+                        case 1:
+                            Console.WriteLine("");
+                            Console.WriteLine("..............");
+                            Console.WriteLine(" Linear Search");
+                            Console.WriteLine("..............");
+                            MyList.input();
+                            MyList.LinearSearch();
+                            break;
+                        case 2:
+                            Console.WriteLine("");
+                            Console.WriteLine("..............");
+                            Console.WriteLine(" Binary Search");
+                            Console.WriteLine("..............");
+                            MyList.input();
+                            MyList.BinarySearch();
+                            break;
+                        case 3:
+                            Console.WriteLine(" Exit");
+                            break;
+                        default:
+                            Console.WriteLine(" Error");
+                            break;
+                    }
+                    Console.WriteLine("\n Pilih Menu Lagi? (y/n): ");
+                    ch = char.Parse(Console.ReadLine().ToLower());
+                    Console.Clear();
+                } while (ch == 'y');
+
+                // to exit from the console
+                Console.WriteLine("\n\n Press Return to exit. ");
+                Console.ReadLine();
+            } while (Pilihanmenu != 3);
         }
     }
 }
